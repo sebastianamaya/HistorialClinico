@@ -30,6 +30,7 @@ $scope.aseguradora=null;
 $scope.vinculacion=null;
 $scope.password=null;
 $scope.role=null;
+$scope.sexo=null;
         $rootScope.nameP=null;
         $scope.save= function(){
             $rootScope.person={"id":$scope.id,"name":$scope.name
@@ -51,6 +52,7 @@ $scope.role=null;
 			, "vinculacion":$scope.vinculacion
 			, "password":$scope.password
 			, "role":"Paciente"
+                        , "sexo":$scope.sexo
 			, "programaIndividual":[]
 			};
             newPerson.save($rootScope.person,function(){
@@ -70,5 +72,9 @@ $scope.role=null;
                 );
             });
             };
+        $scope.selectmenu=document.getElementById("sexoS");
+        $scope.selectmenu.onchange=function(){
+            $scope.sexo = this.options[this.selectedIndex].text;
+        }
 		
 }]);

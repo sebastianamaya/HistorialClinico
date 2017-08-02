@@ -29,6 +29,16 @@ return name;
 public void setName(String name) {
 this.name = name;
 }
+@Column(name = "sexo")
+private String sexo;
+
+public String getSexo() {
+return sexo;
+}
+
+public void setSexo(String sexo) {
+this.sexo = sexo;
+}
 @Column(name = "lugarDeNacimiento")
 private String lugarDeNacimiento;
 

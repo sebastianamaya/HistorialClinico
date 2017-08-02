@@ -25,7 +25,7 @@ angular.module('myApp.RegistersInvestigatorViewProgramaIndividual', ['ngRoute'])
                             $scope.labels.push($scope.personAct.id);
                             for(var n=0; n<$scope.personAct.programaIndividual.length; n++){
                                 var dd=$scope.personAct.programaIndividual[n];
-$scope.principalAndDiagnostic.push([$scope.personAct.id, $scope.personAct.name
+$scope.principalAndDiagnostic.push([$scope.personAct.id, $scope.personAct.name, $scope.personAct.sexo
 , dd.area
 , dd.subarea
 , dd.nombreObjetivo

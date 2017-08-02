@@ -15,7 +15,7 @@ angular.module('myApp.ControlRegisterProgramaIndividual', ['ngRoute'])
 		$scope.subarea=null;
 		$scope.nombreObjetivo=null;
 		$scope.puntuacion=null;
-		$scope.nombreTerapeuta=$rootScope.person.name;
+		$scope.nombreTerapeuta=$rootScope.terapeuta;
                 console.log($rootScope.patientId);
         $scope.saveRegister= function(){
             $scope.diagnostic={"date":$scope.date

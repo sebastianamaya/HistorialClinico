@@ -55,7 +55,7 @@ angular.module('myApp.Login', ['ngRoute'])
 	                                 function( value ){
 	                                     $scope.personH=value;
 	                                     if(($scope.personH.password==$rootScope.pasPerson)){
-	                                       
+                                                 $rootScope.terapeuta=$scope.personH.name;
 	                                         if($scope.personH.role=="Doctor"){
 	                                             $location.path("HomeDoctor");
 	                                         }
