@@ -17,6 +17,7 @@ angular.module('myApp', [
   'myApp.RegisterPatient',
   'myApp.HomeDoctor',
   'myApp.version',
+  'myApp.Report',
   'services.factory',
   'chart.js'
 ]).
