@@ -14,6 +14,7 @@ angular.module('myApp', [
   'myApp.Login',
   'myApp.Register',
   'myApp.HomeInvestigator',
+  'myApp.RegisterPatientObjetivo',
   'myApp.RegisterPatient',
   'myApp.HomeDoctor',
   'myApp.version',

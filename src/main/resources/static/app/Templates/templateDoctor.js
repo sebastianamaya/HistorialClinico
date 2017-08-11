@@ -21,8 +21,8 @@ angular.module('myApp.templateDoctor', ['ngRoute'])
       		$location.path("RegisterPatient");
       };
       
-       $scope.continueRegisterobjetivos=function(){
-      		$location.path("RegisterPatient");
+       $scope.continueRegisterObjetivo=function(){
+      		$location.path("RegisterPatientObjetivo");
       };
       
       $scope.continueRegisterPuntuacion=function(){

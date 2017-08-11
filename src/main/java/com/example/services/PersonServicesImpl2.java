@@ -1,4 +1,6 @@
 package  com.example.services;
+import com.example.model.Objetivo;
+import com.example.model.ObjetivoCurriculum;
 import com.example.model.Person;
 import org.springframework.stereotype.Service;
 import com.example.jpa.GenericService;
@@ -40,5 +42,18 @@ public class PersonServicesImpl2 implements PersonServices{
     @Override
     public Person getPerson(Long pId) {
         return (Person) ps.get(pId);
+    }
+
+    public void deleteObj(Long pId, String nombreObjetivo){
+        Person person=this.getPerson(pId);
+        java.util.List<com.example.model.ObjetivoCurriculum> objetivos=person.getObjetivosCurriculum();
+        for (int i= 0; i < objetivos.size(); i++){
+            ObjetivoCurriculum o=objetivos.get(i);
+            if(o.getNombreObjetivo().equals(nombreObjetivo)){
+                objetivos.remove(i);
+            }
+        }
+        person.setObjetivosCurriculum(objetivos);
+        ps.update(person);
     }
 }

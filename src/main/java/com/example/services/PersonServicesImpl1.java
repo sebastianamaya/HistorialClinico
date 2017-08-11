@@ -41,4 +41,9 @@ public class PersonServicesImpl1 implements PersonServices{
         }
         return ans;
     }
+
+    @Override
+    public void deleteObj(Long pId, String nombreObjetivo) {
+
+    }
 }

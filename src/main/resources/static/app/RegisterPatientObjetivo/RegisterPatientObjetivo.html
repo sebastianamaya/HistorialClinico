@@ -1,0 +1,112 @@
+<div ng-include="'/app/Templates/templateDoctor.html'"></div>
+<div id="wrapper">
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Objetivos progrma individual</h1>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+
+        <div ng-hide="newObj" class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div ng-hide="commentsY">
+                            {{commentsTitle}}
+                        </div>
+                        <div ng-show="commentsY">
+                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <thead>
+                                <tr>
+                                    <th>Objetivos progrma individual</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="c in objetivosC" >
+                                    <td>
+                                        <div class="panel panel-green">
+                                            <div class="panel-heading">
+                                                Area: {{c.area}}
+                                            </div>
+                                            <div class="panel-heading">
+                                                Subarea: {{c.subarea}}
+                                            </div>
+                                            <div class="panel-footer">
+                                                Objetivo: {{c.nombreObjetivo}}
+                                            </div>
+                                            <button type="button" class="btn btn-danger" data-ng-click="deleteObjetivo(c.nombreObjetivo)">Eliminar Objetivo</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <!-- /.table-responsive -->
+                    </div></div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-lg-12 -->
+            <button type="button" class="btn btn-success" ng-click="newObjetivo()">Registrar Nuevo objetivo</button>
+        </div>
+        <!-- /.row -->
+
+
+        <div ng-show="newObj"  class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Registra el nuevo objetivo</h1>
+            </div>
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <form role="form">
+                                    <div class="form-group">
+                                        <label> Area </label>
+                                        <select ng-model="areaSelected" ng-options="area as area.nombre for area in areas track by area.idarea" >
+                                            <option value="">--Elige opcion--</option>
+                                        </select>
+<br><br> <button type="button" class="btn btn-success" ng-click="areaSel()">Aceptar</button><br><br>
+                                        <div class="form-group" ng-show="areasel">
+                                        <label> Subarea </label>
+                                        <select ng-model="subareaSelected" ng-options="subarea as subarea.nombre for subarea in subareas track by subarea.idsubarea" >
+                                            <option value="">--Elige opcion--</option>
+                                        </select>
+                                            <br><br>
+                                            <button type="button" class="btn btn-success" ng-click="subareaSel()">Aceptar</button>
+                                        <br><br>
+                                            </div>
+                                        <div class="form-group" ng-show="subareasel">
+                                            <label> Objetivo </label>
+                                            <select ng-model="objetivoSelected" ng-options="objetivo as objetivo.nombre for objetivo in objetivos track by objetivo.idobjetivo" >
+                                                <option value="">--Elige opcion--</option>
+                                            </select>
+                                            <br><br>
+                                            <button type="button" class="btn btn-success" ng-click="saveRegisterObjetivo()">Guardar</button>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- /.row (nested) -->
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /#page-wrapper -->
+
+</div>
+<!-- /#wrapper -->

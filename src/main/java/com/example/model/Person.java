@@ -3,7 +3,9 @@ package
 	    
 	    import javax.persistence.*;
 	    import java.util.Calendar;
-	    @SuppressWarnings("all")
+		import java.util.List;
+
+@SuppressWarnings("all")
 	    @Entity
 	    @Table(name = "persons", schema = "application")
 public class Person {
@@ -232,4 +234,21 @@ this.role = role;
 			public void setProgramaIndividual(java.util.ArrayList<com.example.model.Objetivo> programaIndividual) {
 			this.programaIndividual = programaIndividual;
 			}
-        }
+
+			@OneToMany(cascade = CascadeType.ALL)
+			@JoinColumns(
+					{
+							@JoinColumn(name = "objetivocurriculum", referencedColumnName = "id", nullable = false),
+					}
+			)
+			private java.util.List<com.example.model.ObjetivoCurriculum> objetivosCurriculum =new java.util.ArrayList<com.example.model.ObjetivoCurriculum>();
+
+
+	public java.util.List<com.example.model.ObjetivoCurriculum> getObjetivosCurriculum() {
+		return objetivosCurriculum;
+	}
+
+	public void setObjetivosCurriculum(java.util.List<com.example.model.ObjetivoCurriculum> objetivosCurriculum) {
+		this.objetivosCurriculum = objetivosCurriculum;
+	}
+}
