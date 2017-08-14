@@ -76,5 +76,9 @@ $scope.sexo=null;
         $scope.selectmenu.onchange=function(){
             $scope.sexo = this.options[this.selectedIndex].text;
         }
-		
+$scope.CrearInformeEvaluacion {
+        $rootScope.FindID=false;
+           $location.path("ReportTEA");                        
+                                };
+       };
 }]);

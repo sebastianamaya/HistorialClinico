@@ -19,6 +19,7 @@ angular.module('myApp', [
   'myApp.HomeDoctor',
   'myApp.version',
   'myApp.Report',
+  'myApp.ReportTEA',
   'services.factory',
   'chart.js'
 ]).

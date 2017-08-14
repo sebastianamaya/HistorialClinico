@@ -221,6 +221,129 @@ return role;
 public void setRole(String role) {
 this.role = role;
 }
+
+public String getHistoriaDelProblema() {
+        return historiaDelProblema;
+    }
+
+    public void setHistoriaDelProblema(String historiaDelProblema) {
+        this.historiaDelProblema = historiaDelProblema;
+    }
+
+    public String getMetodoDeEvaluacion() {
+        return metodoDeEvaluacion;
+    }
+
+    public void setMetodoDeEvaluacion(String metodoDeEvaluacion) {
+        this.metodoDeEvaluacion = metodoDeEvaluacion;
+    }
+
+    public String getInformacionGeneral() {
+        return informacionGeneral;
+    }
+
+    public void setInformacionGeneral(String informacionGeneral) {
+        this.informacionGeneral = informacionGeneral;
+    }
+
+    public String getActividadesBasicasGenerales() {
+        return actividadesBasicasGenerales;
+    }
+
+    public void setActividadesBasicasGenerales(String actividadesBasicasGenerales) {
+        this.actividadesBasicasGenerales = actividadesBasicasGenerales;
+    }
+
+    public String getHabilidadesEspeciales() {
+        return habilidadesEspeciales;
+    }
+
+    public void setHabilidadesEspeciales(String habilidadesEspeciales) {
+        this.habilidadesEspeciales = habilidadesEspeciales;
+    }
+
+    public String getAreasDeEvaluacion() {
+        return areasDeEvaluacion;
+    }
+
+    public void setAreasDeEvaluacion(String areasDeEvaluacion) {
+        this.areasDeEvaluacion = areasDeEvaluacion;
+    }
+
+    public String getProblemasComportamentales() {
+        return problemasComportamentales;
+    }
+
+    public void setProblemasComportamentales(String problemasComportamentales) {
+        this.problemasComportamentales = problemasComportamentales;
+    }
+
+    public String getPsicologia() {
+        return psicologia;
+    }
+
+    public void setPsicologia(String psicologia) {
+        this.psicologia = psicologia;
+    }
+
+    public String getResultados() {
+        return resultados;
+    }
+
+    public void setResultados(String resultados) {
+        this.resultados = resultados;
+    }
+
+    public String getAnalisisDeCriteriosDiagnostico() {
+        return analisisDeCriteriosDiagnostico;
+    }
+
+    public void setAnalisisDeCriteriosDiagnostico(String analisisDeCriteriosDiagnostico) {
+        this.analisisDeCriteriosDiagnostico = analisisDeCriteriosDiagnostico;
+    }
+
+    public String getCompromiso() {
+        return compromiso;
+    }
+
+    public void setCompromiso(String compromiso) {
+        this.compromiso = compromiso;
+    }
+        
+@Column(name = "historiaDelProblema")
+private String historiaDelProblema;   
+
+@Column(name = "metodoDeEvaluacion")
+private String metodoDeEvaluacion;
+
+@Column(name = "informacionGeneral")
+private String informacionGeneral;        
+
+@Column(name = "actividadesBasicasGenerales")
+private String actividadesBasicasGenerales;
+
+@Column(name = "habilidadesEspeciales")
+private String habilidadesEspeciales;
+
+@Column(name = "areasDeEvaluacion")
+private String areasDeEvaluacion;
+
+@Column(name = "problemasComportamentales")
+private String problemasComportamentales;
+
+@Column(name = "psicologia")
+private String psicologia;
+
+@Column(name = "resultados")
+private String resultados;
+
+@Column(name = "analisisDeCriteriosDiagnostico")
+private String analisisDeCriteriosDiagnostico;
+
+@Column(name = "compromiso")
+private String compromiso;
+
+
 @OneToMany(cascade = CascadeType.ALL)
 			@JoinColumns(
 					{
