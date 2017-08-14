@@ -1,15 +1,15 @@
 'use strict';
 
-angular.module('myApp.UpdatePerson', ['ngRoute'])
+angular.module('myApp.UpdatePersonInforme', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/UpdatePerson', {
-    templateUrl: 'UpdatePerson/UpdatePerson.html',
-    controller: 'UpdatePersonCtrl'
+  $routeProvider.when('/UpdatePersonInforme', {
+    templateUrl: 'UpdatePersonInforme/UpdatePersonInforme.html',
+    controller: 'UpdatePersonInformeCtrl'
   });
 }])
 
-.controller('UpdatePersonCtrl', ['$rootScope', '$scope','person', 'persons','$http','$resource', '$location', function ($rootScope, $scope, person, persons, $http, $resource, $location) {
+.controller('UpdatePersonInformeCtrl', ['$rootScope', '$scope','person', 'persons','$http','$resource', '$location', function ($rootScope, $scope, person, persons, $http, $resource, $location) {
 
 		 person.get({personId:""+$rootScope.patientId})
                             .$promise.then(
@@ -29,18 +29,17 @@ angular.module('myApp.UpdatePerson', ['ngRoute'])
                     }
             );
 		};
-
-		$scope.ciudad=null;
-		$scope.localidad=null;
-		$scope.barrio=null;
-		$scope.edadPadre=null;
-		$scope.ocupacionPadre=null;
-		$scope.telefonoPadre=null;
-		$scope.edadMadre=null;
-		$scope.ocupacionMadre=null;
-		$scope.telefonoMadre=null;
-		$scope.aseguradora=null;
-		$scope.vinculacion=null;
+		$scope.historia=null;
+        $scope.compromiso=null;
+        $scope.criterios=null;
+        $scope.resultados=null;
+        $scope.psicologia=null;
+        $scope.problemas=null;
+        $scope.areas=null;
+        $scope.habilidades=null;
+        $scope.basicas=null;
+        $scope.informacionG=null;
+        $scope.evaluacion=null;
         $rootScope.nameP=null;
 
         $scope.update= function(){
@@ -49,38 +48,38 @@ angular.module('myApp.UpdatePerson', ['ngRoute'])
                             //success
                             function( value ){
                                 $scope.personT=value;
-if($scope.ciudad!=null&&$scope.ciudad!=''){
-	$scope.personT.ciudad=$scope.ciudad;
+if($scope.historia!=null&&$scope.historia!=''){
+	$scope.personT.historiaDelProblema=$scope.historia;
 }
-if($scope.localidad!=null&&$scope.localidad!=''){
-	$scope.personT.localidad=$scope.localidad;
+if($scope.evaluacion!=null&&$scope.evaluacion!=''){
+	$scope.personT.metodoDeEvaluacion=$scope.evaluacion;
 }
-if($scope.barrio!=null&&$scope.barrio!=''){
-	$scope.personT.barrio=$scope.barrio;
+if($scope.informacionG!=null&&$scope.informacionG!=''){
+	$scope.personT.informacionGeneral=$scope.informacionG;
 }
-if($scope.edadPadre!=null&&$scope.edadPadre!=''){
-	$scope.personT.edadPadre=$scope.edadPadre;
+if($scope.habilidades!=null&&$scope.habilidades!=''){
+	$scope.personT.habilidadesEspeciales=$scope.habilidades;
 }
-if($scope.ocupacionPadre!=null&&$scope.ocupacionPadre!=''){
-	$scope.personT.ocupacionPadre=$scope.ocupacionPadre;
+if($scope.areas!=null&&$scope.areas!=''){
+	$scope.personT.areasDeEvaluacion=$scope.areas;
 }
-if($scope.telefonoPadre!=null&&$scope.telefonoPadre!=''){
-	$scope.personT.telefonoPadre=$scope.telefonoPadre;
+if($scope.problemas!=null&&$scope.problemas!=''){
+	$scope.personT.problemasComportamentales=$scope.problemas;
 }
-if($scope.edadMadre!=null&&$scope.edadMadre!=''){
-	$scope.personT.edadMadre=$scope.edadMadre;
+if($scope.psicologia!=null&&$scope.psicologia!=''){
+	$scope.personT.psicologia=$scope.psicologia;
 }
-if($scope.ocupacionMadre!=null&&$scope.ocupacionMadre!=''){
-	$scope.personT.ocupacionMadre=$scope.ocupacionMadre;
+if($scope.resultados!=null&&$scope.resultados!=''){
+	$scope.personT.resultados=$scope.resultados;
 }
-if($scope.telefonoMadre!=null&&$scope.telefonoMadre!=''){
-	$scope.personT.telefonoMadre=$scope.telefonoMadre;
+if($scope.criterios!=null&&$scope.criterios!=''){
+	$scope.personT.analisisDeCriteriosDiagnostico=$scope.criterios;
 }
-if($scope.aseguradora!=null&&$scope.aseguradora!=''){
-	$scope.personT.aseguradora=$scope.aseguradora;
+if($scope.compromiso!=null&&$scope.compromiso!=''){
+	$scope.personT.compromiso=$scope.compromiso;
 }
-if($scope.vinculacion!=null&&$scope.vinculacion!=''){
-	$scope.personT.vinculacion=$scope.vinculacion;
+if($scope.basicas!=null&&$scope.basicas!=''){
+	$scope.personT.actividadesBasicasGenerales=$scope.basicas;
 }
                                 persons.update($scope.personT)
                                 .$promise.then(

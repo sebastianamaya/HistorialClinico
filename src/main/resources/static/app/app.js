@@ -19,7 +19,9 @@ angular.module('myApp', [
   'myApp.HomeDoctor',
   'myApp.version',
   'myApp.Report',
+  'myApp.InformeDiagnostico',
   'services.factory',
+  'myApp.UpdatePersonInforme',
   'chart.js'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {

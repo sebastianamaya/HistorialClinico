@@ -12,7 +12,7 @@ angular.module('myApp.Report', ['ngRoute'])
 .controller('ReportCtrl', ['person', 'newPerson', '$rootScope', '$scope', 'persons','$http','$resource', '$location', function (person, newPerson, $rootScope, $scope, persons, $http, $resource, $location) {
         
         $scope.informe1= function(){
-            console.info("informe1");
+            $location.path("InformeDiagnostico");
         };
         $scope.informe2= function(){
             console.info("informe2");
