@@ -46,8 +46,8 @@ angular.module('myApp.HomeDoctor', ['ngRoute'])
         $rootScope.FindID=false;
     };
 
-    $scope.CrearReporte=function(){
+    //$scope.CrearReporte=function(){
            //$rootScope.FindID=false;
-           $location.path("Report");
-       };
+         //  $location.path("Report");
+       //};
 }]);

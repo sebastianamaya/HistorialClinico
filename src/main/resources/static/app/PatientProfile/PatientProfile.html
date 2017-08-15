@@ -2,7 +2,8 @@
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Tus Datos</h1>
+          
+            <h2 class="page-header">Datos del ni&ntildeo</h2>
         </div>
         <!-- /.col-lg-12 -->
     </div>
@@ -13,104 +14,113 @@
                 <div class="panel-heading">
                     Datos personales
                 </div>
+                <h4><p style="font-size:25px; color:blue;">Informaci&oacuten del ni&ntildeo</p></h4>
+                <hr color="blue" size=4>
                 <div class="panel-body">
-                    <h2> Numero de Identificacion
-                        <br><br>
+                    <label> N&uacutemero de Identificaci&oacuten
+ 
                         <small> {{person.id}} </small>
-                    </h2>
+                    </label>
                     <br><br>
 
-                    <h2> Nombre
-                        <br><br>
+                    <label> Nombre
+                        
                         <small> {{person.name}} </small>
-                    </h2>
+                    </label>
+                    <br><br>
+                    
+                    <label> Sexo
+                     
+                        <small> {{person.sexo}} </small>
+                    </label>
                     <br><br>
 
-<h2> LugarDeNacimiento
-	                        <br><br>
+
+<label> Lugar de Nacimiento
+	                        
 	                        <small> {{person.lugarDeNacimiento}} </small>
-	                    </h2>
+	                    </label>
 	                    <br><br>
-<h2> FechaDeNacimiento
-	                        <br><br>
+<label> Fecha de Nacimiento
+	                       
 	                        <small> {{person.fechaDeNacimiento | date:'yyyy-MM-dd'}} </small>
-	                    </h2>
+	                    </label>
 	                    <br><br>
-<h2> NumeroDocumento
-	                        <br><br>
+<label> N&uacutemero de Documento
+	                        
 	                        <small> {{person.numeroDocumento}} </small>
-	                    </h2>
+	                    </label>
 	                    <br><br>
-<h2> Ciudad
-	                        <br><br>
+<label> Ciudad
+	                        
 	                        <small> {{person.ciudad}} </small>
-	                    </h2>
+	                    </label>
 	                    <br><br>
-<h2> Localidad
-	                        <br><br>
+<label> Localidad
+	                        
 	                        <small> {{person.localidad}} </small>
-	                    </h2>
+	                    </label>
 	                    <br><br>
-<h2> Barrio
-	                        <br><br>
+<label> Barrio
+	                        
 	                        <small> {{person.barrio}} </small>
-	                    </h2>
+	                    </label>
 	                    <br><br>
-<h2> NombrePadre
-	                        <br><br>
+                            <h4><p style="font-size:25px; color:blue;">Informaci&oacuten del Padre</p></h4>
+                            <hr color="blue" size=4>
+<label> Nombre del Padre
+	                        
 	                        <small> {{person.nombrePadre}} </small>
-	                    </h2>
+	                    </label>
 	                    <br><br>
-<h2> EdadPadre
-	                        <br><br>
+<label> Edad del Padre
+	                       
 	                        <small> {{person.edadPadre}} </small>
-	                    </h2>
+	                    </label>
 	                    <br><br>
-<h2> OcupacionPadre
-	                        <br><br>
+<label> Ocupaci&oacuten del Padre
+	                       
 	                        <small> {{person.ocupacionPadre}} </small>
-	                    </h2>
-	                    <br><br>
-<h2> TelefonoPadre
-	                        <br><br>
+	                    </label>
+	                    
+<label> Telefono del Padre
+	          
 	                        <small> {{person.telefonoPadre}} </small>
-	                    </h2>
+	                    </label>
 	                    <br><br>
-<h2> NombrMadre
-	                        <br><br>
+                            <h4><p style="font-size:25px; color:blue;">Informaci&oacuten de la Madre</p></h4>
+                            <hr color="blue" size=4>
+<label> Nombre de la Madre
+	          
 	                        <small> {{person.nombrMadre}} </small>
-	                    </h2>
+	                    </label>
 	                    <br><br>
-<h2> EdadMadre
-	                        <br><br>
+<label> Edad de la Madre
+	        
 	                        <small> {{person.edadMadre}} </small>
-	                    </h2>
+	                    </label>
 	                    <br><br>
-<h2> OcupacionMadre
-	                        <br><br>
+<label> Ocupaci&oacuten de la Madre
+	                   
 	                        <small> {{person.ocupacionMadre}} </small>
-	                    </h2>
+	                    </label>
 	                    <br><br>
-<h2> TelefonoMadre
-	                        <br><br>
+<label> Telefono de la Madre
+	            
 	                        <small> {{person.telefonoMadre}} </small>
-	                    </h2>
+	                    </label>
 	                    <br><br>
-<h2> Aseguradora
-	                        <br><br>
+                            <hr color="blue" size=4>
+<label> Aseguradora
+	            
 	                        <small> {{person.aseguradora}} </small>
-	                    </h2>
+	                    </label>
 	                    <br><br>
-<h2> Vinculacion
-	                        <br><br>
+<label> Vinculaci&oacuten
+	                       
 	                        <small> {{person.vinculacion}} </small>
-	                    </h2>
+	                    </label>
 	                    <br><br>
-<h2> Sexo
-                        <br><br>
-                        <small> {{person.sexo}} </small>
-                    </h2>
-                    <br><br>
 
                     <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="continueUP()">Actualizar Datos</button>
                 </div>

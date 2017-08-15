@@ -31,7 +31,10 @@ angular.module('myApp.templateDoctor', ['ngRoute'])
       $scope.continuePatientProfile=function(){
       		$location.path("PatientProfile");
       };
-      
+          $scope.continueCrearReporte=function(){
+           //$rootScope.FindID=false;
+           $location.path("Report");
+       };
       
         
 }]);

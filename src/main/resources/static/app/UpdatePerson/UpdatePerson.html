@@ -18,54 +18,58 @@
                                     <div class="form-group">
 
                                         <label> Ciudad </label>
-                                        <br><br>
+                                        
                                         <p class="text-warning">Dato anterior: {{person.ciudad}}</p> <input type="text" ng-model="ciudad">
 
                                         <br>
+                                        
                                         <label> Localidad </label>
-                                        <br><br>
-                                        <input type="text" ng-model="localidad">
+                                        <p class="text-warning">Dato anterior: {{person.localidad}}</p> <input type="text" ng-model="localidad">
+                                        
                                         <br><br>
                                         <label> Barrio </label>
+                                        <p class="text-warning">Dato anterior: {{person.barrio}}</p> <input type="text" ng-model="barrio">
+                                        
                                         <br><br>
-                                        <input type="text" ng-model="barrio">
+                                        
+                                        <label> Edad del Padre </label>
+                                        <p class="text-warning">Dato anterior: {{person.edadPadre}}</p> <input type="number" ng-model="edadPadre">
+                                       
                                         <br><br>
-                                        <label> EdadPadre </label>
+                                        
+                                        <label> Ocupaci&oacuten del Padre </label>
+                                        <p class="text-warning">Dato anterior: {{person.ocupacionPadre}}</p> <input type="text" ng-model="ocupacionPadre">
+                                        
                                         <br><br>
-                                        <input type="number" ng-model="edadPadre">
+                                        
+                                        <label> Telefono del Padre </label>
+                                        <p class="text-warning">Dato anterior: {{person.telefonoPadre}}</p> <input type="number" ng-model="telefonoPadre">
+                                        
                                         <br><br>
-                                        <label> OcupacionPadre </label>
+                                        <label> Edad de la Madre </label>
+                                        <p class="text-warning">Dato anterior: {{person.edadMadre}}</p> <input type="number" ng-model="edadMadre">
+                                        
                                         <br><br>
-                                        <input type="text" ng-model="ocupacionPadre">
+                                        <label> Ocupaci&oacuten de la Madre </label>
+                                        <p class="text-warning">Dato anterior: {{person.ocupacionMadre}}</p>  <input type="text" ng-model="ocupacionMadre">
+                                       
                                         <br><br>
-                                        <label> TelefonoPadre </label>
-                                        <br><br>
-                                        <input type="number" ng-model="telefonoPadre">
-                                        <br><br>
-                                        <label> EdadMadre </label>
-                                        <br><br>
-                                        <input type="number" ng-model="edadMadre">
-                                        <br><br>
-                                        <label> OcupacionMadre </label>
-                                        <br><br>
-                                        <input type="text" ng-model="ocupacionMadre">
-                                        <br><br>
-                                        <label> TelefonoMadre </label>
-                                        <br><br>
-                                        <input type="number" ng-model="telefonoMadre">
+                                        <label> Telefono de la Madre </label>
+                                        <p class="text-warning">Dato anterior: {{person.telefonoMadre}}</p> <input type="number" ng-model="telefonoMadre">
+                                        
                                         <br><br>
                                         <label> Aseguradora </label>
+                                        <p class="text-warning">Dato anterior: {{person.aseguradora}}</p> <input type="text" ng-model="aseguradora">
+                                        
                                         <br><br>
-                                        <input type="text" ng-model="aseguradora">
-                                        <br><br>
-                                        <label> Vinculacion </label>
-                                        <br><br>
-                                        <input type="text" ng-model="vinculacion">
+                                        <label> Vinculaci&oacuten </label>
+                                        <p class="text-warning">Dato anterior: {{person.vinculacion}}</p> <input type="text" ng-model="vinculacion">
+                                        
                                         <br><br>
                                     </div>
-                                    <button type="submit" class="btn btn-default" ng-click="update()">Actualizar</button>
-                                    <button class="btn btn-default" ng-click="back()">Atras</button>
-                                    <button type="reset" class="btn btn-default">Reiniciar</button>
+                                    <button type="submit" class="btn btn-outline btn-primary" ng-click="update()">Actualizar</button>
+                                    <button class="btn btn-outline btn-primary" ng-click="back()">Atras</button>
+                                    <button type="reset" class="btn btn-outline btn-primary">Reiniciar</button>
                                 </form>
                             </div>
                         </div>

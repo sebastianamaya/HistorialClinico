@@ -2,21 +2,49 @@
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Consulta los datos de control</h1>
+            
+            <h2 class="page-header">Consultar datos de control</h2>
         </div>
         <!-- /.col-lg-12 -->
-        <div ng-hide="FindID">
-            <label> Identificador a consultar</label>
-            <br><br>
-            <input type="number" ng-model="pId">
-            <br><br>
+        
+        
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    </div>
+                
+                 <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <form role="form">
+                                    <div class="form-group">
+                
+                                        <div ng-hide="FindID">
+                                            <label> Identificador a consultar</label>
+                                            <br><br>
+                                            <input type="number" ng-model="pId">
+                                            <br><br>
 
-            <button type="button" class="btn btn-success" ng-click="consultar()">Consultar Datos</button>
-            <br><br>
-        </div>
+                                            <button type="button" class="btn btn-primary" ng-click="consultar()">Consultar Datos</button>
+                                            <br><br>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                    </div> 
+                                    
+                
+                
+            </div>
+        </div>    
+        
+        
+        
+        
         <div ng-show="FindID">
-            <button type="button" class="btn btn-success" ng-click="NuevaConsulta()">Nueva Consulta</button>
-            <button type="button" class="btn btn-success" ng-click="CrearReporte()">Nuevo Reporte </button>
+            <button type="button" class="btn btn-primary" ng-click="NuevaConsulta()">Nueva Consulta</button>
+           <!-- <button type="button" class="btn btn-primary" ng-click="CrearReporte()">Nuevo Reporte </button>-->
             <br><br>
         </div>
     </div>
@@ -28,101 +56,117 @@
                     Datos de {{principal.name}}
                 </div>
                 <div class="panel-body">
-                    <h2> Numero de Identificacion
-                        <br><br>
+                    
+                    <h6> <p style="font-size:25px; color:blue;">Informaci&oacuten del ni&ntildeo</p></h6>
+                    <hr color="blue" size=4>
+                    <label> N&uacutemero de Identificaci&oacuten
+                     
                         <small> {{principal.id}} </small>
-                    </h2>
+                    </label>
                     <br><br>
-                    <h2> Name
-                        <br><br>
+                    
+                    
+                    <label> Nombre
+                       
                         <small> {{principal.name}} </small>
-                    </h2>
+                    </label>
                     <br><br>
-                    <h2> LugarDeNacimiento
-                        <br><br>
-                        <small> {{principal.lugarDeNacimiento}} </small>
-                    </h2>
-                    <br><br>
-                    <h2> FechaDeNacimiento
-                        <br><br>
-                        <small> {{principal.fechaDeNacimiento | date:'yyyy-MM-dd'}} </small>
-                    </h2>
-                    <br><br>
-                    <h2> NumeroDocumento
-                        <br><br>
-                        <small> {{principal.numeroDocumento}} </small>
-                    </h2>
-                    <br><br>
-                    <h2> Ciudad
-                        <br><br>
-                        <small> {{principal.ciudad}} </small>
-                    </h2>
-                    <br><br>
-                    <h2> Localidad
-                        <br><br>
-                        <small> {{principal.localidad}} </small>
-                    </h2>
-                    <br><br>
-                    <h2> Barrio
-                        <br><br>
-                        <small> {{principal.barrio}} </small>
-                    </h2>
-                    <br><br>
-                    <h2> NombrePadre
-                        <br><br>
-                        <small> {{principal.nombrePadre}} </small>
-                    </h2>
-                    <br><br>
-                    <h2> EdadPadre
-                        <br><br>
-                        <small> {{principal.edadPadre}} </small>
-                    </h2>
-                    <br><br>
-                    <h2> OcupacionPadre
-                        <br><br>
-                        <small> {{principal.ocupacionPadre}} </small>
-                    </h2>
-                    <br><br>
-                    <h2> TelefonoPadre
-                        <br><br>
-                        <small> {{principal.telefonoPadre}} </small>
-                    </h2>
-                    <br><br>
-                    <h2> NombrMadre
-                        <br><br>
-                        <small> {{principal.nombrMadre}} </small>
-                    </h2>
-                    <br><br>
-                    <h2> EdadMadre
-                        <br><br>
-                        <small> {{principal.edadMadre}} </small>
-                    </h2>
-                    <br><br>
-                    <h2> OcupacionMadre
-                        <br><br>
-                        <small> {{principal.ocupacionMadre}} </small>
-                    </h2>
-                    <br><br>
-                    <h2> TelefonoMadre
-                        <br><br>
-                        <small> {{principal.telefonoMadre}} </small>
-                    </h2>
-                    <br><br>
-                    <h2> Aseguradora
-                        <br><br>
-                        <small> {{principal.aseguradora}} </small>
-                    </h2>
-                    <br><br>
-                    <h2> Vinculacion
-                        <br><br>
-                        <small> {{principal.vinculacion}} </small>
-                    </h2>
-                    <br><br>
-                    <h2> Sexo
-                        <br><br>
+                    
+                     <label> Sexo
+                       
                         <small> {{principal.sexo}} </small>
-                    </h2>
+                    </label>
                     <br><br>
+                    
+                    
+                    <label> Lugar de Nacimiento
+                        
+                        <small> {{principal.lugarDeNacimiento}} </small>
+                    </label>
+                    <br><br>
+                    <label> Fecha de Nacimiento
+                        
+                        <small> {{principal.fechaDeNacimiento | date:'yyyy-MM-dd'}} </small>
+                    </label>
+                    <br><br>
+                    <label> N&uacutemero de Documento
+                        
+                        <small> {{principal.numeroDocumento}} </small>
+                    </label>
+                    <br><br>
+                    <label> Ciudad
+                        
+                        <small> {{principal.ciudad}} </small>
+                    </label>
+                    <br><br>
+                    <label> Localidad
+                        
+                        <small> {{principal.localidad}} </small>
+                    </label>
+                    <br><br>
+                    <label> Barrio
+                        
+                        <small> {{principal.barrio}} </small>
+                    </label>
+                    <br><br>
+                    <h6> <p style="font-size:25px; color:blue;">Informaci&oacuten del Padre</p></h6>
+                    <hr color="blue" size=4>
+                    
+                    <label> Nombre del Padre
+                        
+                        <small> {{principal.nombrePadre}} </small>
+                    </label>
+                    <br><br>
+                    <label> Edad del Padre
+                        
+                        <small> {{principal.edadPadre}} </small>
+                    </label>
+                    <br><br>
+                    <label> Ocupaci&oacuten del Padre
+                        
+                        <small> {{principal.ocupacionPadre}} </small>
+                    </label>
+                    <br><br>
+                    <label> Telefono del Padre
+                        
+                        <small> {{principal.telefonoPadre}} </small>
+                    </label>
+                    <br><br>
+                    
+                    <h6> <p style="font-size:25px; color:blue;">Informaci&oacuten de la Madre</p></h6>
+                    <hr color="blue" size=4>
+                    <label> Nombre de la Madre
+                        
+                        <small> {{principal.nombrMadre}} </small>
+                    </label>
+                    <br><br>
+                    <label> Edad de la Madre
+                       
+                        <small> {{principal.edadMadre}} </small>
+                    </label>
+                    <br><br>
+                    <label> Ocupaci&oacuten de la Madre
+                        
+                        <small> {{principal.ocupacionMadre}} </small>
+                    </label>
+                    <br><br>
+                    <label> Telefono de la Madre
+                        
+                        <small> {{principal.telefonoMadre}} </small>
+                    </label>
+                    <hr color="blue" size=4>
+                    <br><br>
+                    <label> Aseguradora
+                        
+                        <small> {{principal.aseguradora}} </small>
+                    </label>
+                    <br><br>
+                    <label> Vinculaci&oacuten
+                        
+                        <small> {{principal.vinculacion}} </small>
+                    </label>
+                    <br><br>
+                   
                 </div>
                 <!-- /.panel-body -->
             </div>
