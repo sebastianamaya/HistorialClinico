@@ -1,6 +1,8 @@
 package 
 		com.example.model;
 	    
+import java.sql.Clob;
+import java.util.ArrayList;
 	    import javax.persistence.*;
 	    import java.util.Calendar;
 		import java.util.List;
@@ -222,13 +224,14 @@ public void setRole(String role) {
 this.role = role;
 }
 
-public String getHistoriaDelProblema() {
+    public Clob getHistoriaDelProblema() {
         return historiaDelProblema;
     }
 
-    public void setHistoriaDelProblema(String historiaDelProblema) {
+    public void setHistoriaDelProblema(Clob historiaDelProblema) {
         this.historiaDelProblema = historiaDelProblema;
     }
+
 
     public String getMetodoDeEvaluacion() {
         return metodoDeEvaluacion;
@@ -311,7 +314,7 @@ public String getHistoriaDelProblema() {
     }
         
 @Column(name = "historiaDelProblema")
-private String historiaDelProblema;   
+private Clob historiaDelProblema;   
 
 @Column(name = "metodoDeEvaluacion")
 private String metodoDeEvaluacion;
