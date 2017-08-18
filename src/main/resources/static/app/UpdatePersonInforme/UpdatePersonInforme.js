@@ -42,7 +42,7 @@ angular.module('myApp.UpdatePersonInforme', ['ngRoute'])
         $scope.evaluacion=null;
         $rootScope.nameP=null;
 
-        var ccc=new Clob;
+      //  var ccc=new Clob;
         $scope.update= function(){
             person.get({personId:""+$rootScope.patientId})
                     .$promise.then(
@@ -50,21 +50,22 @@ angular.module('myApp.UpdatePersonInforme', ['ngRoute'])
                             function( value ){
                                 $scope.personT=value;
 if($scope.historia!=null&&$scope.historia!=''){
-                                    var historiaU=[];
-                                    if($scope.historia.length>250){
-                                        var c=$scope.historia.length/250;
-                                        var ini=0;
-                                        var fin=250;
-                                        for(var line = 0; line < c; line++){
-                                            historiaU.push($scope.historia.substring(ini,fin));
-                                            ini=ini+250;
-                                            fin=fin+250;
-                                          }
-                                        historiaU.push($scope.historia.substring(fin,$scope.historia.length));
-    }else{
-        historiaU.push($scope.historia);
-    }
-	$scope.personT.historiaDelProblema=historiaU;
+    $scope.personT.historiaDelProblema=$scope.historia;
+                                   // var historiaU=[];
+                                   // if($scope.historia.length>250){
+                                     //   var c=$scope.historia.length/250;
+                                       // var ini=0;
+                                      //  var fin=250;
+                                     //   for(var line = 0; line < c; line++){
+                                      //      historiaU.push($scope.historia.substring(ini,fin));
+                                       //     ini=ini+250;
+                                       //     fin=fin+250;
+                                      //    }
+                                      //  historiaU.push($scope.historia.substring(fin,$scope.historia.length));
+   // }else{
+       // historiaU.push($scope.historia);
+   // }
+	//$scope.personT.historiaDelProblema=historiaU;
 }
 if($scope.evaluacion!=null&&$scope.evaluacion!=''){
 	$scope.personT.metodoDeEvaluacion=$scope.evaluacion;
