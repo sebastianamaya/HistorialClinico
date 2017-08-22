@@ -35,6 +35,10 @@ angular.module('myApp.templateDoctor', ['ngRoute'])
            //$rootScope.FindID=false;
            $location.path("Report");
        };
-      
+
+      $scope.continueRegisterCurriculum=function(){
+      		$location.path("RegisterCurriculum");
+      };
+
         
 }]);

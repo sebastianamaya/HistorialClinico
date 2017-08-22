@@ -9,7 +9,7 @@ angular.module('myApp.RegisterPatientObjetivo', ['ngRoute'])
   });
 }])
 
-.controller('RegisterPatientObjetivoCtrl', ['$rootScope', '$scope', 'persons','person', 'deleteObj', '$http','$resource', '$location', function ($rootScope, $scope, persons,person, deleteObj, $http, $resource, $location) {
+.controller('RegisterPatientObjetivoCtrl', ['$rootScope', '$scope', 'persons','person', '$http','$resource', '$location', function ($rootScope, $scope, persons,person, $http, $resource, $location) {
 		person.get({personId:""+$rootScope.patientId})
                         .$promise.then(
                                 //success
@@ -131,7 +131,14 @@ angular.module('myApp.RegisterPatientObjetivo', ['ngRoute'])
                               //success
                               function( value ){
                                   $scope.personT=value;
-                                  deleteObj.update({nombreObj:""+nombreObjetivo},$scope.personT)
+                                  $scope.objeti=$scope.personT.objetivosCurriculum;
+                                   for(var l= 0; l< $scope.objeti.length; l++){
+                                      var obj=$scope.objeti[l];
+                                      if(obj==nombreObjetivo){
+                                           $scope.objetivos.splice(l,1);
+                                      }
+                                    }
+                                  person.update($scope.personT)
                                   .$promise.then(
                                       //success
                                       function(value){

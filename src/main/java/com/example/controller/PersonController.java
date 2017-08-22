@@ -46,10 +46,10 @@ public class PersonController {
         ps.updatePerson(p);
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
-    @RequestMapping(method = RequestMethod.PUT, path = "/{nombreObj}")
-    public ResponseEntity<?> deleteObjPerson(@RequestBody Person p,@PathVariable String nombreObj) {
-        Long id= p.getId();
-        ps.deleteObj(id,nombreObj);
+
+    @RequestMapping(method = RequestMethod.PUT, path = "/{area}")
+    public ResponseEntity<?> saveArea(@RequestBody Person p, @PathVariable String area) throws Throwable {
+        ps.writeFile(area);
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 }

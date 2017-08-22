@@ -6,6 +6,10 @@ import org.springframework.stereotype.Service;
 import com.example.jpa.GenericService;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,16 +48,16 @@ public class PersonServicesImpl2 implements PersonServices{
         return (Person) ps.get(pId);
     }
 
-    public void deleteObj(Long pId, String nombreObjetivo){
-        Person person=this.getPerson(pId);
-        java.util.List<com.example.model.ObjetivoCurriculum> objetivos=person.getObjetivosCurriculum();
-        for (int i= 0; i < objetivos.size(); i++){
-            ObjetivoCurriculum o=objetivos.get(i);
-            if(o.getNombreObjetivo().equals(nombreObjetivo)){
-                objetivos.remove(i);
-            }
-        }
-        person.setObjetivosCurriculum(objetivos);
-        ps.update(person);
+
+    @Override
+    public void writeFile(String line) throws Throwable {
+        BufferedWriter out = null;
+        URL fileLocation = getClass().getResource("areas.txt");
+        System.out.println(fileLocation.getPath()+"  "+line+"  "+fileLocation.toString());
+        out = new BufferedWriter(new FileWriter(fileLocation.getPath(), true));
+        out.write(line);
+        if (out != null) {
+                out.close();}
+
     }
 }

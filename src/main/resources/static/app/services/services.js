@@ -10,7 +10,7 @@ angular.module('services.factory', ['ngRoute', 'ngResource'])
 .factory('newPerson', function($resource) {
 	return $resource('/person/new');
 })
-.factory('deleteObj', function($resource) {
-	return $resource('/person/:nombreObj',{id:"@_nombreObj"},{'update': { method: 'PUT', isArray: false}});
+.factory('saveAreaFile', function($resource) {
+	return $resource('/person/:area',{id:"@_area"},{'update': { method: 'PUT', isArray: false}});
 })
 ;
