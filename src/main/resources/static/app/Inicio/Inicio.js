@@ -1,15 +1,15 @@
 'use strict';
 
-angular.module('myApp.HomeDoctor', ['ngRoute'])
+angular.module('myApp.Inicio', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/HomeDoctor', {
-    templateUrl: 'HomeDoctor/HomeDoctor.html',
-    controller: 'HomeDoctorCtrl'
+  $routeProvider.when('/Inicio', {
+    templateUrl: 'Inicio/Inicio.html',
+    controller: 'InicioCtrl'
   });
 }])
 
-.controller('HomeDoctorCtrl', ['$rootScope', '$scope', 'person','$location', function ($rootScope, $scope, person,$location) {
+.controller('InicioCtrl', ['$rootScope', '$scope', 'person','$location', function ($rootScope, $scope, person,$location) {
 	person.get({personId:""+$rootScope.idPerson})
     .$promise.then(
             //success

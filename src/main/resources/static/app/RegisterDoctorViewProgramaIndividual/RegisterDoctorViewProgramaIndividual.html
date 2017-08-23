@@ -2,53 +2,86 @@
 <div id="page-wrapper" ng-show="foundRD">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Datos de control de {{principal.name}} para ProgramaIndividual</h1>
+            <h1 class="page-header">Puntuaciones de {{principal.name}}</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>
 
     <div class="row">
-        <div class="col-lg-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
+
+            <div class="col-lg-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                    </div>
+
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                <label>Fecha Inicio</label>
+                <br><br>
+
+                <input type="date" ng-model="inicio">
+                <br><br>
+
+                <label>Fecha Fin</label>
+                <br><br>
+                <input type="date" ng-model="fin">
+                <br><br>
+                <button type="submit" class="btn btn-primary" ng-click="filtrarlo()">Filtrar por fecha</button>
+                <br><br></div>
                 </div>
-                <!-- /.panel-heading -->
-                <div class="panel-body">
-                	<label>Filtrar por:  </label>
-					<input type="text" ng-model="busqueda">
-					<br><br>
-                    <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                        <thead>
-                        <tr>
-<th>Area</th>
-<th>Subarea</th>
-<th>NombreObjetivo</th>
-<th>Puntuacion</th>
-<th>Date</th>
-<th>NombreTerapeuta</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr ng-repeat="d in diagnosticsNew | filter:busqueda" >
-<td>{{d.area}}</td>
-<td>{{d.subarea}}</td>
-<td>{{d.nombreObjetivo}}</td>
-<td>{{d.puntuacion}}</td>
-<td>{{d.date | date:"dd/MMMM/yyyy"}}</td>
-<td>{{d.nombreTerapeuta}}</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    <!-- /.table-responsive -->
-                </div>
-                <!-- /.panel-body -->
             </div>
-            <!-- /.panel -->
+            <div class="col-lg-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                    </div>
+
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <label>Buscar por:  </label>
+                        <input type="text" ng-model="busqueda">
+                        <br><br>
+            </div>
+            </div>
         </div>
-        <!-- /.col-lg-12 -->
+        </div>
+
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+        </div>
+
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                <thead>
+                <tr>
+                    <th>Area</th>
+                    <th>Subarea</th>
+                    <th>NombreObjetivo</th>
+                    <th>Puntuacion</th>
+                    <th>Date</th>
+                    <th>NombreTerapeuta</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="d in diagnosticsNew | filter:busqueda" >
+                    <td>{{d.area}}</td>
+                    <td>{{d.subarea}}</td>
+                    <td>{{d.nombreObjetivo}}</td>
+                    <td>{{d.puntuacion}}</td>
+                    <td>{{d.date | date:"dd/MMMM/yyyy"}}</td>
+                    <td>{{d.nombreTerapeuta}}</td>
+                </tr>
+                </tbody>
+            </table>
+            <!-- /.table-responsive -->
+        </div>
+        <!-- /.panel-body -->
     </div>
-    <div class="row">
-    </div>
+    <!-- /.panel -->
+    <!-- /.col-lg-12 -->
+
+</div>
     <!-- /.row -->
 </div>
 <!-- /#page-wrapper -->

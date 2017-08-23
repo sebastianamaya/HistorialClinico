@@ -24,17 +24,11 @@
                                         <input type="date" ng-model="date">
                                         <br><br>
 
-<label> Area </label>
-<br><br>
-<input type="String" ng-model="area">
-<br><br>
-<label> Subarea </label>
-<br><br>
-<input type="String" ng-model="subarea">
-<br><br>
 <label> NombreObjetivo </label>
 <br><br>
-<input type="String" ng-model="nombreObjetivo">
+                                        <select ng-model="objetivoSelected" ng-options="objetivo as objetivo.nombre for objetivo in objetivos track by objetivo.idobjetivo" >
+                                            <option value="">--Elige opcion--</option>
+                                        </select>
 <br><br>
 <label> Puntuacion </label>
 <br><br>
@@ -42,8 +36,8 @@
 <br><br>
 <br><br>
                                     </div>
-                                    <button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="saveRegister()">Aceptar</button>
-                                    <button type="reset" class="btn btn-primary btn-lg btn-block">Reiniciar</button>
+                                    <button type="submit" class="btn btn-outline btn-primary" ng-click="saveRegister()">Aceptar</button>
+                                    <button type="reset" class="btn btn-outline btn-primary">Reiniciar</button>
                                 </form>
                             </div>
                         </div>

@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-lg-12">
             
-          <!--  <h2 class="page-header">Consultar datos de control</h2>-->
+            <h2 class="page-header">Historial cl&iacutenico</h2>
         </div>
         <!-- /.col-lg-12 -->
         
@@ -14,19 +14,30 @@
                     </div>
                 
                  <div class="panel-body">
+                     <div class="row">
+                        <!-- <img src="http://www.anthiros.org.co/images/stories/autismo-alerta.png" width="122" height="85">
+                                        --><img src="https://scontent.fbog4-1.fna.fbcdn.net/v/t1.0-1/p200x200/17626671_238231806645071_8982017108204138560_n.png?oh=94128a30a99a7d7a03932efa3cd601aa&oe=5A2C733F">
+                                         
+                     </div>
                         <div class="row">
+                            
                             <div class="col-lg-6">
                                 <form role="form">
                                     <div class="form-group">
-                
-                                        <div ng-hide="FindID">
-                                            <label> Identificador a consultar</label>
-                                            <br><br>
-                                            <input type="number" ng-model="pId">
-                                            <br><br>
+                                    <div ng-hide="FindID">
+                                            
 
-                                            <button type="button" class="btn btn-primary" ng-click="consultar()">Consultar Datos</button>
-                                            <br><br>
+                                               <div class="panel panel-primary">
+                                              <div class="panel-heading">ANTHIROS</div>
+                                              <div class="panel-body"><P>ANTHIROS es una organización privada fundada en 1988 que propende
+                                                por el crecimiento y desarrollo de toda persona. Ubicado en la Calle 
+                                                70 A No 11 - 59, con ágiles vías de acceso desde cualquier punto de Bogotá.</P>
+                                                  <P>Somos un equipo de profesionales en las áreas de Psicología, Terapia Ocupacional, Fonoaudiología y Educación (procesos de aprendizaje y pensamiento), expertos en evaluación e intervención del Desarrollo (habilidades y comportamiento) en la población infantil-adolescente y en dificultades emocionales, de ajuste, pareja, etc., en adultos, basados en un modelo cognitivo comportamental con una aproximación natural y funcional e intervención integral.
+                                                  </P>
+                                                  <P>Paralelamente al trabajo diseñado de manera individual, ANTHIROS desarrolla programas que involucran directamente al núcleo familiar, a las instituciones educativas y a las empresas, para que bajo un mismo interés se consolide una asistencia y asesoría integral.
+                                                  </p></div>
+                                                            </div>
+                                           
                                             </div>
                                         </div>
                                     </form>
@@ -42,16 +53,19 @@
         
         
         
-
+        <div ng-show="FindID">
+            <button type="button" class="btn btn-primary" ng-click="NuevaConsulta()">Nueva Consulta</button>
+           <!-- <button type="button" class="btn btn-primary" ng-click="CrearReporte()">Nuevo Reporte </button>-->
+            <br><br>
+        </div>
     </div>
 
     <div class="row" ng-show="FindID">
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3>Perfil de {{principal.name}}</h3>
+                    Datos de {{principal.name}}
                 </div>
-                <!--
                 <div class="panel-body">
                     
                     <h6> <p style="font-size:25px; color:blue;">Informaci&oacuten del ni&ntildeo</p></h6>
@@ -166,8 +180,6 @@
                    
                 </div>
                 <!-- /.panel-body -->
-
-
             </div>
             <!-- /.panel -->
         </div>

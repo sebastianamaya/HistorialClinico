@@ -37,9 +37,6 @@ angular.module('myApp.RegisterPatientObjetivo', ['ngRoute'])
 		$scope.areas=[];
         $scope.subareas=[];
         $scope.objetivos=[];
-        var liness;
-        var liness2;
-        var liness3;
         $scope.areaSelected={
           idarea:null,
           nombre:null
@@ -54,7 +51,7 @@ angular.module('myApp.RegisterPatientObjetivo', ['ngRoute'])
         };
          $http.get('/app/CurriculumAnthiros/Areas/areas.txt').success(function (data) {
              var fileToRead=data;
-             liness = data.split('\n');
+             var liness = data.split('\n');
              for(var line = 0; line < liness.length; line++){
                var a={idarea:line+1,nombre:liness[line]}
                $scope.areas.push(a);
@@ -64,14 +61,15 @@ angular.module('myApp.RegisterPatientObjetivo', ['ngRoute'])
 
          $scope.areasel=false;
          $scope.areaSel=function(){
+                 $scope.subareas=[];
             $scope.areasel=true;
             $http.get('/app/CurriculumAnthiros/Subareas/subareas.txt').success(function (data) {
                  var fileToRead=data;
-                 liness2 = data.split('\n');
+                 var liness2 = data.split('\n');
                  for(var line = 0; line < liness2.length; line++){
-                   var area=liness2[line].split(',');
-                   var a={idarea:area[1],nombre:area[0]}
-                   if(area[1]==$scope.areaSelected.idarea){
+                   var x=liness2[line].split(',');
+                   var a={idsubarea:x[1],nombre:x[0]}
+                   if(x[1]==$scope.areaSelected.idarea){
                         $scope.subareas.push(a);
                    }
                  }
@@ -79,14 +77,15 @@ angular.module('myApp.RegisterPatientObjetivo', ['ngRoute'])
          };
          $scope.subareasel=false;
           $scope.subareaSel=function(){
+                  $scope.objetivos=[];
              $scope.subareasel=true;
              $http.get('/app/CurriculumAnthiros/Objetivos/objetivos.txt').success(function (data) {
                   var fileToRead=data;
-                  liness3 = data.split('\n');
+                  var liness3 = data.split('\n');
                   for(var line = 0; line < liness3.length; line++){
-                    var area=liness3[line].split(',');
-                    var a={idarea:area[1],nombre:area[0]}
-                    if(area[1]===$scope.subareaSelected.idarea){
+                    var y=liness3[line].split(',');
+                    var a={idobjetivo:y[1],nombre:y[0]}
+                    if(y[1]==$scope.subareaSelected.idsubarea){
                          $scope.objetivos.push(a);
                     }
                   }

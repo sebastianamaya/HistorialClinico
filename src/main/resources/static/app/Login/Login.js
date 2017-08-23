@@ -57,7 +57,7 @@ angular.module('myApp.Login', ['ngRoute'])
 	                                     if(($scope.personH.password==$rootScope.pasPerson)){
                                                  $rootScope.terapeuta=$scope.personH.name;
 	                                         if($scope.personH.role=="Doctor"){
-	                                             $location.path("HomeDoctor");
+	                                             $location.path("Inicio");
 	                                         }
 	                                         if($scope.personH.role=="Investigador"){
 	                                             $location.path("HomeInvestigator");
@@ -79,7 +79,7 @@ angular.module('myApp.Login', ['ngRoute'])
 	                         );
 	                      } else {
 	                          $scope.error = true;
-	                          alert("Autenticación Fallida");
+	                          alert("Autenticaciï¿½n Fallida");
 	                          $rootScope.logout();
 	                      }
 	                  });

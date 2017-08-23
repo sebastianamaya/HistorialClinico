@@ -10,33 +10,31 @@ angular.module('myApp.RegisterDoctorViewProgramaIndividual', ['ngRoute'])
 }])
 
 .controller('RegisterDoctorViewProgramaIndividualCtrl', ['$rootScope', '$scope', 'person', 'persons', function ($rootScope, $scope, person, persons) {
-
+    
+    $scope.diagnosticsNew=[];
     $scope.foundRD=$rootScope.FindID;
+    $scope.inicio=null;
+    $scope.fin=null;
+    $scope.filtrarlo= function(){
+        for(var n=0; n<$scope.diagnosticsNew.length; n++){
+            if(!($scope.diagnosticsNew[n].date>=$scope.inicio&&$scope.diagnosticsNew[n].date<=$scope.fin)){
+                $scope.diagnosticsNew.splice(n,1);
+            }             
+                
+        }
+    };
+    
     person.get({personId:""+$rootScope.patientId})
     .$promise.then(
             //success
             function( value ){
                 $scope.principal=value;
                 $scope.diagnostics=$scope.principal.programaIndividual;
-				$scope.diagnosticsNew=[];
-                $scope.labels=[];
-                $scope.series = ['Datos de Control ProgramaIndividual'];
                 $scope.diagnostics.orderByDate("date", -1);
-				$scope.currentDate=new Date();
                 for(var n=0; n<$scope.diagnostics.length; n++){
                     var dd=$scope.diagnostics[n];
-                    var datee=new Date(dd.date);
-                    if(datee >= ($scope.currentDate.setDate($scope.currentDate.getDate()-14))){
-                    	$scope.diagnosticsNew.push(dd);
-	                    var datee=new Date(dd.date);
-	                    var dia = datee.getDate();
-	                    var mes = parseInt(datee.getMonth()) + 1;
-	                    var year = datee.getFullYear();
-	                    var dated=dia+"/"+mes+"/"+year;
-	                    $scope.labels.push(dated);
-					}else{
-                        break;
-                    }
+                    $scope.diagnosticsNew.push(dd);			
+                    
                 }
             },
             //error
