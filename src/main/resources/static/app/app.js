@@ -20,6 +20,8 @@ angular.module('myApp', [
   'myApp.version',
   'myApp.Report',
   'myApp.Inicio',
+  'myApp.RegisterPuntuacionCuatrimestral',
+  'myApp.RegisterDoctorViewInformeCuatrimestral',
   'myApp.RegisterCurriculum',
   'myApp.InformeDiagnostico',
   'services.factory',

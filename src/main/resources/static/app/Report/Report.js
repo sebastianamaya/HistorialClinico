@@ -14,9 +14,14 @@ angular.module('myApp.Report', ['ngRoute'])
         $scope.informe1= function(){
             $location.path("InformeDiagnostico");
         };
-        $scope.informe2= function(){
-            console.info("informe2");
+
+
+
+        $scope.informe2ver= function(){
+            $location.path("RegisterDoctorViewInformeCuatrimestral");
         };     
-         
+        $scope.informe2puntuar= function(){
+            $location.path("RegisterPuntuacionCuatrimestral");
+        };
 
 }]);

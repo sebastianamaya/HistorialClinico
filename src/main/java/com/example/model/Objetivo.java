@@ -3,7 +3,9 @@ package
 	    
 	    import javax.persistence.*;
 	    import java.util.Calendar;
-	    @Entity
+		import java.util.List;
+
+@Entity
 	    @Table(name = "objetivos", schema = "application")
 public class Objetivo {
 	public Objetivo(){}
@@ -79,4 +81,6 @@ return nombreTerapeuta;
 public void setNombreTerapeuta(String nombreTerapeuta) {
 this.nombreTerapeuta = nombreTerapeuta;
 }
-        }
+
+
+}

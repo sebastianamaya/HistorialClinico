@@ -44,7 +44,8 @@ public class PersonServicesImpl1 implements PersonServices{
 
 
     @Override
-    public void writeFile(String line) {
+    public void deleteObjetivo(Long id, String objetivo) {
 
     }
+
 }

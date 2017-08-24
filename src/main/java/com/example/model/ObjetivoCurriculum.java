@@ -5,7 +5,7 @@ import javax.persistence.*;
 import java.util.Calendar;
 @Entity
 @Table(name = "objetivoscurriculum", schema = "application")
-public class ObjetivoCurriculum {
+public class  ObjetivoCurriculum {
     public ObjetivoCurriculum(){}
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -29,6 +29,18 @@ public class ObjetivoCurriculum {
     public void setArea(String area) {
         this.area = area;
     }
+
+    @Column(name="estado")
+    private String estado;
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
     @Column(name = "subarea")
     private String subarea;
 
@@ -48,6 +60,22 @@ public class ObjetivoCurriculum {
 
     public void setNombreObjetivo(String nombreObjetivo) {
         this.nombreObjetivo = nombreObjetivo;
+    }
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumns(
+            {
+                    @JoinColumn(name = "puntuacioncuatrimestral", referencedColumnName = "objetivo_id", nullable = false),
+            }
+    )
+    private java.util.List<com.example.model.PuntuacionCuatrimestral> puntuacionesCuatrimestral=new java.util.ArrayList<com.example.model.PuntuacionCuatrimestral>();
+
+    public java.util.List<com.example.model.PuntuacionCuatrimestral> getPuntuacionesCuatrimestrales() {
+        return puntuacionesCuatrimestral;
+    }
+
+    public void setPuntuacionesCuatrimestrales(java.util.List<com.example.model.PuntuacionCuatrimestral> puntuacionesCuatrimestrales) {
+        this.puntuacionesCuatrimestral = puntuacionesCuatrimestrales;
     }
 
 }

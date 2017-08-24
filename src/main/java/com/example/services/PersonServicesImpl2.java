@@ -50,14 +50,15 @@ public class PersonServicesImpl2 implements PersonServices{
 
 
     @Override
-    public void writeFile(String line) throws Throwable {
-        BufferedWriter out = null;
-        URL fileLocation = getClass().getResource("areas.txt");
-        System.out.println(fileLocation.getPath()+"  "+line+"  "+fileLocation.toString());
-        out = new BufferedWriter(new FileWriter(fileLocation.getPath(), true));
-        out.write(line);
-        if (out != null) {
-                out.close();}
-
+    public void deleteObjetivo(Long id, String objetivo) {
+        Person p=this.getPerson(id);
+        List<com.example.model.ObjetivoCurriculum> objs= p.getObjetivosCurriculum();
+        for (int i = 0; i < objs.size(); i++) {
+            if(objs.get(i).getNombreObjetivo().equals(objetivo)){
+                objs.get(i).setEstado("no");
+            }
+        }
+        this.updatePerson(p);
     }
+
 }

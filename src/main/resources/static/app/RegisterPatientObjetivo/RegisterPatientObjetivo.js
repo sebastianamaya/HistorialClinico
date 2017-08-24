@@ -9,13 +9,18 @@ angular.module('myApp.RegisterPatientObjetivo', ['ngRoute'])
   });
 }])
 
-.controller('RegisterPatientObjetivoCtrl', ['$rootScope', '$scope', 'persons','person', '$http','$resource', '$location', function ($rootScope, $scope, persons,person, $http, $resource, $location) {
+.controller('RegisterPatientObjetivoCtrl', ['$rootScope', '$scope', 'persons','person', 'deleteObjetivo', '$http','$resource', '$location', function ($rootScope, $scope, persons,person,deleteObjetivo, $http, $resource, $location) {
 		person.get({personId:""+$rootScope.patientId})
                         .$promise.then(
                                 //success
                                 function( value ){
                                     $scope.personaC=value;
                                     $scope.objetivosC=$scope.personaC.objetivosCurriculum;
+                                    for(var i = 0; i < $scope.objetivosC.length; i++){
+                                        if($scope.objetivosC[i].estado=="no"){
+                                            $scope.objetivosC.splice(i,1);
+                                        }
+                                    }
                                     if (typeof $scope.objetivosC == "undefined"){
                                         $scope.commentsY=false;
                                         $scope.commentsTitle="No hay objetivos registrados";
@@ -68,7 +73,7 @@ angular.module('myApp.RegisterPatientObjetivo', ['ngRoute'])
                  var liness2 = data.split('\n');
                  for(var line = 0; line < liness2.length; line++){
                    var x=liness2[line].split(',');
-                   var a={idsubarea:x[1],nombre:x[0]}
+                   var a={idsubarea:line+1,nombre:x[0]}
                    if(x[1]==$scope.areaSelected.idarea){
                         $scope.subareas.push(a);
                    }
@@ -84,7 +89,7 @@ angular.module('myApp.RegisterPatientObjetivo', ['ngRoute'])
                   var liness3 = data.split('\n');
                   for(var line = 0; line < liness3.length; line++){
                     var y=liness3[line].split(',');
-                    var a={idobjetivo:y[1],nombre:y[0]}
+                    var a={idobjetivo:line+1,nombre:y[0]}
                     if(y[1]==$scope.subareaSelected.idsubarea){
                          $scope.objetivos.push(a);
                     }
@@ -94,6 +99,7 @@ angular.module('myApp.RegisterPatientObjetivo', ['ngRoute'])
 
         $scope.saveRegisterObjetivo= function(){
             $scope.nuevoObjetivo={"area":$scope.areaSelected.nombre
+            ,"estado":"si"
 , "subarea":$scope.subareaSelected.nombre
 , "nombreObjetivo":$scope.objetivoSelected.nombre
             };
@@ -130,14 +136,7 @@ angular.module('myApp.RegisterPatientObjetivo', ['ngRoute'])
                               //success
                               function( value ){
                                   $scope.personT=value;
-                                  $scope.objeti=$scope.personT.objetivosCurriculum;
-                                   for(var l= 0; l< $scope.objeti.length; l++){
-                                      var obj=$scope.objeti[l];
-                                      if(obj==nombreObjetivo){
-                                           $scope.objetivos.splice(l,1);
-                                      }
-                                    }
-                                  person.update($scope.personT)
+                                  deleteObjetivo.update({objetivo:""+nombreObjetivo},$scope.personT)
                                   .$promise.then(
                                       //success
                                       function(value){

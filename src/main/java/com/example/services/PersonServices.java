@@ -10,5 +10,5 @@ public interface PersonServices {
     public List<Person> getPersons();
     public void updatePerson(Person p);
     public Person getPerson(Long pId);
-    public void writeFile(String line) throws IOException, Throwable;
+    public void deleteObjetivo(Long id, String objetivo);
 }
