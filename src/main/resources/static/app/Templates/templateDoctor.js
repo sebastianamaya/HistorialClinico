@@ -11,6 +11,10 @@ angular.module('myApp.templateDoctor', ['ngRoute'])
       $scope.continueLogoutD=function(){
             $rootScope.logout();
       };
+       $scope.continueInicio=function(){
+            $location.path("Inicio");
+      };
+      
       $scope.continueHomeD=function(){
             $location.path("HomeDoctor");
       };

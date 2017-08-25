@@ -224,13 +224,7 @@ public void setRole(String role) {
 this.role = role;
 }
 
-    public Clob getHistoriaDelProblema() {
-        return historiaDelProblema;
-    }
-
-    public void setHistoriaDelProblema(Clob historiaDelProblema) {
-        this.historiaDelProblema = historiaDelProblema;
-    }
+  
 
 
     public String getMetodoDeEvaluacion() {
@@ -312,9 +306,17 @@ this.role = role;
     public void setCompromiso(String compromiso) {
         this.compromiso = compromiso;
     }
+
+    public String getHistoriaDelProblema() {
+        return historiaDelProblema;
+    }
+
+    public void setHistoriaDelProblema(String historiaDelProblema) {
+        this.historiaDelProblema = historiaDelProblema;
+    }
         
 @Column(name = "historiaDelProblema")
-private Clob historiaDelProblema;   
+private String historiaDelProblema;   
 
 @Column(name = "metodoDeEvaluacion")
 private String metodoDeEvaluacion;

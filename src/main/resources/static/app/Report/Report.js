@@ -15,7 +15,9 @@ angular.module('myApp.Report', ['ngRoute'])
             $location.path("InformeDiagnostico");
         };
 
-
+         $scope.informe1puntuar= function(){
+            $location.path("UpdatePersonInforme");
+        };
 
         $scope.informe2ver= function(){
             $location.path("RegisterDoctorViewInformeCuatrimestral");

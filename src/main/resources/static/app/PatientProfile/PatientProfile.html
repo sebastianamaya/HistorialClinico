@@ -8,16 +8,18 @@
         <!-- /.col-lg-12 -->
     </div>
     <!-- /.row -->
+    
     <div class="row">
         <div class="col-lg-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Datos personales
                 </div>
-                <h4><p style="font-size:25px; color:blue;">Informaci&oacuten del ni&ntildeo</p></h4>
-                <hr color="blue" size=4>
-                <div class="panel-body">
-                    <label> N&uacutemero de Identificaci&oacuten
+                
+                    <div class="panel panel-primary">
+                                              <div class="panel-heading">Informaci&oacuten del ni&ntildeo</div>
+                                              <div class="panel-body"></div>
+                                                                  <label> N&uacutemero de Identificaci&oacuten
  
                         <small> {{person.id}} </small>
                     </label>
@@ -65,10 +67,16 @@
 	                        
 	                        <small> {{person.barrio}} </small>
 	                    </label>
+                                                            </div>
+                <h4><p style="font-size:25px; color:blue;"></p></h4>
+                <hr color="blue" size=4>
+                
 	                    <br><br>
-                            <h4><p style="font-size:25px; color:blue;">Informaci&oacuten del Padre</p></h4>
-                            <hr color="blue" size=4>
-<label> Nombre del Padre
+                            
+                                 <div class="panel panel-primary">
+                                              <div class="panel-heading">Informaci&oacuten del Padre</div>
+                                              <div class="panel-body"></div>
+                                              <label> Nombre del Padre
 	                        
 	                        <small> {{person.nombrePadre}} </small>
 	                    </label>
@@ -82,15 +90,22 @@
 	                       
 	                        <small> {{person.ocupacionPadre}} </small>
 	                    </label>
+                            <br><br>
 	                    
 <label> Telefono del Padre
 	          
 	                        <small> {{person.telefonoPadre}} </small>
 	                    </label>
 	                    <br><br>
-                            <h4><p style="font-size:25px; color:blue;">Informaci&oacuten de la Madre</p></h4>
+                        
+                                                            </div>
+                            <h4><p style="font-size:25px; color:blue;"></p></h4>
                             <hr color="blue" size=4>
-<label> Nombre de la Madre
+    
+                                 <div class="panel panel-primary">
+                                              <div class="panel-heading">Informaci&oacuten de la Madre</div>
+                                              <div class="panel-body"></div>
+                                              <label> Nombre de la Madre
 	          
 	                        <small> {{person.nombrMadre}} </small>
 	                    </label>
@@ -110,8 +125,14 @@
 	                        <small> {{person.telefonoMadre}} </small>
 	                    </label>
 	                    <br><br>
-                            <hr color="blue" size=4>
-<label> Aseguradora
+                            
+                            </div>
+                                 <div class="panel panel-primary">
+                                              <div class="panel-heading"></div>
+                                              <div class="panel-body"></div>
+                                                            
+                            
+                            <label> Aseguradora
 	            
 	                        <small> {{person.aseguradora}} </small>
 	                    </label>
@@ -121,7 +142,14 @@
 	                        <small> {{person.vinculacion}} </small>
 	                    </label>
 	                    <br><br>
+                            </div>
+                                                            </div>
+                            <h4><p style="font-size:25px; color:blue;"></p></h4>
+                            <hr color="blue" size=4>
 
+                            <hr color="blue" size=4>
+<
+                            
                     <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="continueUP()">Actualizar Datos</button>
                 </div>
                 <!-- /.panel-body -->
@@ -130,9 +158,10 @@
         </div>
         <!-- /.col-lg-4 -->
     </div>
+    
     <!-- /.row -->
-</div>
+
 <!-- /#page-wrapper -->
 
-</div>
+
 <!-- /#wrapper -->

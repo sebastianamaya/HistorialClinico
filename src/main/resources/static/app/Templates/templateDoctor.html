@@ -22,15 +22,20 @@
         <div class="row">
             <div class="col-lg-12">
 
-                <button type="button" class="btn btn-outline btn-info" ng-click="continueHomeD()">Inicio</button>
+                <button type="button" class="btn btn-primary" ng-click="continueInicio()">Inicio</button>
+    
+                <button type="button" class="btn btn-primary" ng-click="continueHomeD()">Consultar ni&ntildeo</button>
 
-                <button type="button" class="btn btn-outline btn-info" ng-click="continueRegisterPatient()">Registrar nuevo paciente</button>
-                <button type="button" class="btn btn-outline btn-info" ng-click="continueRegisterCurriculum()">Modificar curriculum</button>
-                <button ng-show="FindID" type="button" class="btn btn-outline btn-info" ng-click="continueRegistersPProgramaIndividual()">Registros de ProgramaIndividual</button>
-                <button ng-show="FindID" type="button" class="btn btn-outline btn-info" ng-click="continueRegisterPuntuacion()">Registrar nueva puntuación</button>
-                <button ng-show="FindID" type="button" class="btn btn-outline btn-info" ng-click="continueRegisterObjetivo()">Consulta y Registro de objetivos</button>
+                <button type="button" class="btn btn-primary" ng-click="continueRegisterPatient()">Registrar nuevo paciente</button>
+                <button type="button" class="btn btn-primary" ng-click="continueRegisterCurriculum()">Modificar curriculum</button>
+                
                 <button ng-show="FindID" type="button" class="btn btn-outline btn-info" ng-click="continuePatientProfile()">Información del paciente</button>
-                <button ng-show="FindID" type="button" class="btn btn-outline btn-info" ng-click="continueCrearReporte()">Nuevo Reporte</button>
+                <button ng-show="FindID" type="button" class="btn btn-outline btn-info" ng-click="continueRegisterObjetivo()">Programa individual</button>
+                <button ng-show="FindID" type="button" class="btn btn-outline btn-info" ng-click="continueRegistersPProgramaIndividual()">Ver puntuaci&oacuten mensual</button>
+                <button ng-show="FindID" type="button" class="btn btn-outline btn-info" ng-click="continueRegisterPuntuacion()">Registrar Puntuaci&oacuten diaria</button>
+                
+                
+                <button ng-show="FindID" type="button" class="btn btn-outline btn-info" ng-click="continueCrearReporte()">Generar reporte</button>
             
             </div>
             <!-- /.sidebar-collapse -->
