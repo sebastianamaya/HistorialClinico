@@ -18,6 +18,7 @@ angular.module('myApp', [
   'myApp.RegisterPatient',
   'myApp.HomeDoctor',
   'myApp.version',
+  'myApp.UpdateDoctor',
   'myApp.Report',
   'myApp.Inicio',
   'myApp.RegisterPuntuacionCuatrimestral',

@@ -42,6 +42,7 @@ angular.module('myApp.RegisterPuntuacionCuatrimestral', ['ngRoute'])
                                         //success
                                         function( value ){
                                             $scope.personT=value;
+                                            
                                             $scope.objetivosT=$scope.personT.objetivosCurriculum;
                                             for(var l = 0; l < $scope.objetivosT.length; l++){
                                                if($scope.objetivosT[l].nombreObjetivo==$scope.objetivoSelected.nombre){

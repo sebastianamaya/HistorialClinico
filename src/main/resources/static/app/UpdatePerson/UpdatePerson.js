@@ -31,6 +31,7 @@ angular.module('myApp.UpdatePerson', ['ngRoute'])
 		};
 
 		$scope.ciudad=null;
+                $scope.numeroDocumento=null;
 		$scope.localidad=null;
 		$scope.barrio=null;
 		$scope.edadPadre=null;
@@ -49,6 +50,10 @@ angular.module('myApp.UpdatePerson', ['ngRoute'])
                             //success
                             function( value ){
                                 $scope.personT=value;
+if($scope.numeroDocumento!=null&&$scope.numeroDocumento!=''){
+	$scope.personT.numeroDocumento=$scope.numeroDocumento;
+}
+
 if($scope.ciudad!=null&&$scope.ciudad!=''){
 	$scope.personT.ciudad=$scope.ciudad;
 }

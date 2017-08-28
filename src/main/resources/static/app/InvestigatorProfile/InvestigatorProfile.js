@@ -22,8 +22,8 @@ angular.module('myApp.InvestigatorProfile', ['ngRoute'])
                             alert("El paciente no se encuentra registrado");
                         }
                 );
-    $scope.continueUP=function(){
-        $location.path("UpdatePerson");
+    $scope.continueActualizar2=function(){
+        $location.path("UpdateDoctor");
     };
 
 }]);

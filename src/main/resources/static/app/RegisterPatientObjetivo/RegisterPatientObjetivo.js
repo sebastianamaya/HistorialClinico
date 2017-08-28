@@ -108,7 +108,16 @@ angular.module('myApp.RegisterPatientObjetivo', ['ngRoute'])
                     //success
                     function( value ){
                         $scope.personT=value;
-                        $scope.personT.objetivosCurriculum.push($scope.nuevoObjetivo);
+                        var x= true ;
+                        for (var i = 0; i < $scope.personT.objetivosCurriculum.length; i++) { 
+                                    if($scope.personT.objetivosCurriculum[i].nombreObjetivo==$scope.nuevoObjetivo.nombreObjetivo){
+                                        x = false;
+                                    }
+                                }
+                        console.info(x);
+                       if ( x === true){ 
+                            
+                              $scope.personT.objetivosCurriculum.push($scope.nuevoObjetivo);
                         persons.update($scope.personT)
                         .$promise.then(
                             //success
@@ -122,6 +131,12 @@ angular.module('myApp.RegisterPatientObjetivo', ['ngRoute'])
                             }
 
                         );
+                            
+                            }
+                        else{
+                                alert("ese objetivo ya existe")
+                        }    
+
                     },
                     //error
                     function( error ){

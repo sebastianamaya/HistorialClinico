@@ -17,24 +17,18 @@
                                 <form role="form">
                                     <div class="form-group">
 
+                                        <label> Nombre</label>
                                         
-                                        
-                                         <label> N&uacutemero de documento </label>
-                                        
-                                        <p class="text-warning">Dato anterior: {{person.numeroDocumento}}</p> <input type="text" ng-model="numeroDocumento">
+                                        <p class="text-warning">Dato anterior: {{person.name}}</p> <input type="text" ng-model="name">
 
                                         <br>
                                         
-                                        <label> Ciudad </label>
-                                        
-                                        <p class="text-warning">Dato anterior: {{person.ciudad}}</p> <input type="text" ng-model="ciudad">
-
-                                        <br>
-                                        
-                                        <label> Localidad </label>
-                                        <p class="text-warning">Dato anterior: {{person.localidad}}</p> <input type="text" ng-model="localidad">
+                                        <label> contrase&ntildea </label>
+                                        <p class="text-warning"></p> <input type="text" ng-model="password">
                                         
                                         <br><br>
+                                        
+                                        <!--
                                         <label> Barrio </label>
                                         <p class="text-warning">Dato anterior: {{person.barrio}}</p> <input type="text" ng-model="barrio">
                                         
@@ -74,11 +68,12 @@
                                         <p class="text-warning">Dato anterior: {{person.vinculacion}}</p> <input type="text" ng-model="vinculacion">
                                         
                                         <br><br>
+                                        -->
                                     </div>
                                     <button type="submit" class="btn btn-outline btn-primary" ng-click="update()">Actualizar</button>
-                                    <button class="btn btn-outline btn-primary" ng-click="back()">Atras</button>
-                                    <button type="reset" class="btn btn-outline btn-primary">Reiniciar</button>
-                                </form>
+                                 <!--   <button class="btn btn-outline btn-primary" ng-click="back()">Atras</button>
+                              -->      <button type="reset" class="btn btn-outline btn-primary">Reiniciar</button>
+                              </form>
                             </div>
                         </div>
                         <!-- /.row (nested) -->

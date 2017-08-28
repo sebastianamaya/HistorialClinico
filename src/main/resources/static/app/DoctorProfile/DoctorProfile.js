@@ -23,4 +23,20 @@ angular.module('myApp.DoctorProfile', ['ngRoute'])
                         }
                 );
 
+   $scope.continueActualizar=function(){
+            $location.path("UpdateDoctor");
+      };
+
 }]);
+
+
+
+
+
+
+
+
+
+
+		
+		
