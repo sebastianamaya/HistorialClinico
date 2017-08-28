@@ -34,6 +34,8 @@ angular.module('myApp.HomeDoctor', ['ngRoute'])
                 function( value ){
                     $rootScope.FindID=true;
                     $scope.principal=value;
+                    $location.path("PatientProfile");
+
                 },
                 //error
                 function( error ){

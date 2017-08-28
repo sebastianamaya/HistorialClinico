@@ -62,7 +62,7 @@ angular.module('myApp.ControlRegisterProgramaIndividual', ['ngRoute'])
                                                 //success
                                                 function(value){
                                                     console.log("Patient update"+ $scope.personT.programaIndividual);
-                                                    $location.path("HomeDoctor");
+                                                    alert("Registro existoso");
                                                 },
                                                 //error
                                                 function( error ){

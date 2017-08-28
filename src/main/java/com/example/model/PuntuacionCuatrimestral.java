@@ -32,6 +32,17 @@ public class PuntuacionCuatrimestral {
     @Column(name = "fecha")
     private Calendar fecha;
 
+    @Column(name = "tipo")
+    private Long tipo;
+
+    public Long getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(Long tipo) {
+        this.tipo = tipo;
+    }
+
     public String getPuntuacion() {
         return puntuacion;
     }

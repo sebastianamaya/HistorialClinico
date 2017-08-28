@@ -123,7 +123,7 @@ angular.module('myApp.RegisterPatientObjetivo', ['ngRoute'])
                             //success
                             function(value){
                                 console.log("Patient update"+ $scope.personT.programaIndividual);
-                                $location.path("HomeDoctor");
+                                alert("Registro existoso");
                             },
                             //error
                             function( error ){
@@ -156,7 +156,7 @@ angular.module('myApp.RegisterPatientObjetivo', ['ngRoute'])
                                       //success
                                       function(value){
                                           console.log("Patient update"+ $scope.personT.programaIndividual);
-                                          $location.path("HomeDoctor");
+                                          alert("Cambio existoso");
                                       },
                                       //error
                                       function( error ){

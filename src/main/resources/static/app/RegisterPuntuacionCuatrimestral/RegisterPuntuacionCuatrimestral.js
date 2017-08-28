@@ -30,12 +30,26 @@ angular.module('myApp.RegisterPuntuacionCuatrimestral', ['ngRoute'])
 
                     		$scope.fecha=new Date();
                     		$scope.puntuacion=null;
+                            $scope.tipo=null;
+
+                            var datee=new Date($scope.fecha);
+                            var dyear=datee.toString().split(" ");
+                            var dy=dyear[1];
+                            if (dy=="April" || dy=="May" ){
+                                $scope.tipo=1;
+                            }else if(dy=="Aug" || dy=="September"){
+                                $scope.tipo=2;
+                            }else if (dy=="November" || dy=="December"){
+                                $scope.tipo=3;
+                            }
+
 
                             $scope.saveRegister= function(){
 
 
                                 $scope.diagnostic={"puntuacion":$scope.puntuacion
                                                     , "fecha":$scope.fecha
+                                                    , "tipo":$scope.tipo
                                 };
                                 person.get({personId:""+$rootScope.patientId})
                                 .$promise.then(
@@ -46,7 +60,22 @@ angular.module('myApp.RegisterPuntuacionCuatrimestral', ['ngRoute'])
                                             $scope.objetivosT=$scope.personT.objetivosCurriculum;
                                             for(var l = 0; l < $scope.objetivosT.length; l++){
                                                if($scope.objetivosT[l].nombreObjetivo==$scope.objetivoSelected.nombre){
-                                                    $scope.objetivosT[l].puntuacionesCuatrimestrales.push($scope.diagnostic);
+                                                    var res=false;
+                                                    var punts =$scope.objetivosT[l].puntuacionesCuatrimestrales;
+                                                    for(var i=0; i<punts.length;i++){
+                                                        var dat=new Date(punts[i].fecha);
+                                                        var dmonth=dat.toString().split(" ");
+                                                        var dm=dmonth[1];
+                                                        if (punts[i].tipo==$scope.tipo && dm==dy){
+                                                            alert("La puntuación de este cuatrimestra ya fue registrada");
+                                                            res=true;
+                                                            break;
+                                                        }
+                                                    }
+                                                    if(res==false){
+                                                        $scope.objetivosT[l].puntuacionesCuatrimestrales.push($scope.diagnostic);
+                                                    }
+
                                                }
                                              }
                                             persons.update($scope.personT)
@@ -54,7 +83,7 @@ angular.module('myApp.RegisterPuntuacionCuatrimestral', ['ngRoute'])
                                                 //success
                                                 function(value){
                                                     console.log("Patient update"+ $scope.personT.programaIndividual);
-                                                    $location.path("HomeDoctor");
+                                                    alert("Registro existoso");
                                                 },
                                                 //error
                                                 function( error ){

@@ -27,6 +27,7 @@
                 <input type="date" ng-model="fin">
                 <br><br>
                 <button type="submit" class="btn btn-primary" ng-click="filtrarlo()">Filtrar por fecha</button>
+                <button ng-show="limpiar" type="submit" class="btn btn-primary" ng-click="loadData()">Limpiar b&uacutesqueda</button>
                 <br><br></div>
                 </div>
             </div>
@@ -43,52 +44,32 @@
             </div>
             </div>
         </div>
-        
-        
-        
-        
-        
-                    <div class="col-lg-6">
+        <div class="col-lg-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
+                        <label>Registrar puntuacion cuatrimestral</label>
                     </div>
 
                     <!-- /.panel-heading -->
                     <div class="panel-body">
-                        
-                        
-                                                       <form role="form">
-                                    <div class="form-group">
 
-<label> Nombre Objetivo </label>
-<br><br>
-                                        <select ng-model="objetivoSelected" ng-options="objetivo as objetivo.nombre for objetivo in objetivos track by objetivo.idobjetivo" >
-                                            <option value="">--Elige opcion--</option>
-                                        </select>
-<br><br>
-<label> Puntuacion </label>
-<br><br>
-<input type="String" ng-model="puntuacion">
-<br><br>
-                                    </div>
-                                    <button type="submit" class="btn btn-outline btn-primary" ng-click="saveRegister()">Aceptar</button>
-                                    <button type="reset" class="btn btn-outline btn-primary">Reiniciar</button>
-                                </form>
-                        
+                            <label> Nombre Objetivo </label>
+                            <br><br>
+                            <select ng-model="objetivoSelected" ng-options="objetivo as objetivo.nombre for objetivo in objetivos track by objetivo.idobjetivo" >
+                                <option value="">--Elige opcion--</option>
+                            </select>
+                            <br><br>
+                            <label> Puntuacion </label>
+                            <br><br>
+                            <input type="String" ng-model="puntuacion">
+                            <br><br>
+                        <button type="submit" class="btn btn-outline btn-primary" ng-click="saveRegister()">Aceptar</button>
+                        <button type="reset" class="btn btn-outline btn-primary">Reiniciar</button>
+                    </div>
                         <br><br>
             </div>
             </div>
-        </div>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        </div>
+</div>
 
 <div class="row">
     <div class="panel panel-default">

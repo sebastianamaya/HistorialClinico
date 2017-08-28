@@ -87,7 +87,6 @@ if($scope.basicas!=null&&$scope.basicas!=''){
                                     function(value){
                                         console.log("Registro Exitoso");
                                         alert("Registro Exitoso");
-                                        $location.path("HomeDoctor");
                                     },
                                     //error
                                     function( error ){
