@@ -18,6 +18,25 @@
                             <div class="col-lg-6">
                                 <form role="form">
                                     <div class="form-group">
+                                        <div class="panel panel-primary">
+                                            <div class="panel-heading">Nomenclatura</div>
+                                            <div class="panel-body">
+                                                <P>L: LOGRADO : Alcanzó el objetivo propuesto</P>
+                                                <P>I: INDEPENDIENTE: Lo hace solo, pero no ha alcanzado el objetivo</P>
+                                                <P>AV. APOYO VERBAL: Cuando ejecuta la acción requiriendo apoyo verbal, después  del estímulo inicial</P>
+                                                <P>AF: APOYO FISICO: Cuando ejecuta la acción con guía física</P>
+                                                <P>NH: NO LO HACE: Cuando rechaza la instigación, pero no da la respuesta esperada.</P>
+                                                <P>E: ESBOZO: La respuesta es inconsistente por falta de manejo corporal</P>
+                                                <P>A: ACEPTA: Cuando permite el estímulo sin dificultad y por un tiempo adecuado</P>
+                                                <P>T. TOLERA: Cuando permite el estímulo, pero hace gestos de desagrado y/o sólo lo permite por instantes.</P>
+                                                <P>R: RECHAZA: Cuando se retira y/o no permite el estímulo.</P>
+                                                <P>P: PROGRESO: Incremento de la conducta esperada y/o habilidad</P>
+                                                <P>INT: INTERRUMPIDO: Cuando el objetivo no es pertinente.</P>
+                                                <P>NP: NO PROGRESO: Mantenimiento del apoyo requerido y/o aumento de la conducta.</P>
+                                                <P>APL: APLAZADO: Suspensión temporal del objetivo</P>
+
+                                            </div>
+                                        </div>
 
 <label> NombreObjetivo </label>
 <br><br>
@@ -27,7 +46,27 @@
 <br><br>
 <label> Puntuacion </label>
 <br><br>
-<input type="String" ng-model="puntuacion">
+                                        <select name="select" id="select" ng>
+                                            <option value="1">Seleccione</option>
+                                            <option value="3">L</option>
+                                            <option value="3">I</option>
+                                            <option value="4">AV</option>
+                                            <option value="5">AF</option>
+                                            <option value="6">NH</option>
+
+                                            <option value="7">A</option>
+                                            <option value="8">T</option>
+
+                                            <option value="9">R</option>
+                                            <option value="10">E</option>
+                                            <option value="11">P</option>
+                                            <option value="12">NP</option>
+
+                                            <option value="13">INT</option>
+
+                                            <option value="14">APL</option>
+
+                                        </select>
 <br><br>
 <br><br>
                                     </div>

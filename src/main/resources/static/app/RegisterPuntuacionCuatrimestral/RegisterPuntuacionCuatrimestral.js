@@ -103,7 +103,11 @@ angular.module('myApp.RegisterPuntuacionCuatrimestral', ['ngRoute'])
                 function( error ){
                     alert("Identificador no se encuentra registrado");
                 }
-        );
 
+        );
+ $scope.selectmenu=document.getElementById("select");
+                        $scope.selectmenu.onchange=function(){
+                            $scope.puntuacion = this.options[this.selectedIndex].text;
+                        }
 
 }]);

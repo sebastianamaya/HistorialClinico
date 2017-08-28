@@ -84,5 +84,9 @@ angular.module('myApp.ControlRegisterProgramaIndividual', ['ngRoute'])
                 }
         );
 
+        $scope.selectmenu=document.getElementById("select");
+        $scope.selectmenu.onchange=function(){
+            $scope.puntuacion = this.options[this.selectedIndex].text;
+        }
 
 }]);

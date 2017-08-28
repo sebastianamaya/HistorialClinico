@@ -151,5 +151,9 @@ angular.module('myApp.RegisterDoctorViewProgramaIndividual', ['ngRoute'])
             return(da-db)*so;
           })
         };
+        $scope.selectmenu=document.getElementById("select");
+        $scope.selectmenu.onchange=function(){
+            $scope.puntuacion = this.options[this.selectedIndex].text;
+        }
 
 }]);
